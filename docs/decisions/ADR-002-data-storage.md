@@ -1,32 +1,28 @@
 # ADR-002: Data Storage Strategy
 
 ## Status
-[TODO: Your status]
+Decided, not implemented 
 
 ## Context
-[TODO: Explain why you need to make a decision about data storage]
-Questions to consider:
-- Where will expense data be stored?
-- How will it persist between sessions?
-- What are the trade-offs of different approaches?
+Decide how to store data
 
 ## Decision
-[TODO: What storage approach will you use and why?]
+Use SQLite/WASM, since it seems to be more common for local storage
 
 ## Consequences
+Unsure
 
 ### Positive
-[TODO: Benefits of your chosen approach]
+Easy SQL integration
 
 ### Negative
-[TODO: Limitations or challenges]
+Not using a proper backend
 
 ## Migration Plan
-[TODO: How will you evolve your storage solution over time?]
 Example:
-- Weeks 1-4: [Initial approach]
-- Weeks 5-7: [Intermediate approach]
-- Weeks 8-10: [Final approach]
+- Weeks 1-4: Store stuff directly on local storage/cache
+- Weeks 5-7: Integrate more on SQLite
+- Weeks 8-10: Full implementation, look at separate backend solutions
 
 ## Notes
-[TODO: Any additional considerations]
+None yet

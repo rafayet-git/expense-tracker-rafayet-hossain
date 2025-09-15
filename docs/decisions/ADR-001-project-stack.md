@@ -16,25 +16,24 @@ My initial tech stack for this project
 <!-- [TODO: State what you've decided to do]
 Example format:
 We will use [technology] for [purpose] because [reason]. -->
-We will be using Next.js + React for both the frontend and backend because it allows me to control both aspects under one tech stack.
+We will be using Vite + react for the frontend.
 
 ## Consequences
 
 ### Positive
 - Easier control and management
-- Can control backend easily when frontend has issues, and vice versa. 
 
 ### Negative
 [TODO: List challenges or downsides]
-- Harder to distinguish, other solutions such as Vite+react/Node.js will separate the two.
+- Less backend / SSR than Next.js
 
 ## Alternatives Considered
 
 Vite+React
 
-### Option 1: Vite+React, either Node.js or Python as backend
-- **Pros**: Cleaner, Easier to integrate new features.
-- **Cons**: Not as seamless.
+### Option 1: Next.js
+- **Pros**: Easier to integrate new features.
+- **Cons**: Harder, not as experienced in it.
 - **Decision**: Undecided
 
 ## Notes
