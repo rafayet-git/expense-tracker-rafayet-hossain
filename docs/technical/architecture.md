@@ -2,7 +2,7 @@
  
 * Home - intros, with hero banner & buttons, cards that include features
 * Expense - list of expenses inputted, either sorted by date or category. Option to add or remove expenses
-* Suggestions/Review - analytics, show graphs of comparisons of how much you spent today/this week/month compared to last week/month, also AI integration for direct suggestions
+* Overview - analytics, show graphs of comparisons of how much you spent today/this week/month compared to last week/month, also AI integration for direct suggestions
 * Add Expense - add expense(s)
 
 ## Home
