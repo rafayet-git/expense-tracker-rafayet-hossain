@@ -4,11 +4,12 @@ const Header = () => {
 	return (
 		<div className="header">
 			<nav className="nav">
-                <ul className="flex gap-4 p-4 bg-gray-100">
-                <li><NavLink to="/" className={({ isActive }) => isActive ? 'font-bold' : ''}>Home</NavLink></li>
-                <li><NavLink to="/expenses" className={({ isActive }) => isActive ? 'font-bold' : ''}>Expenses</NavLink></li>
-                <li><NavLink to="/overview" className={({ isActive }) => isActive ? 'font-bold' : ''}>Overview</NavLink></li>
-                <li><NavLink to="/add-expense" className={({ isActive }) => isActive ? 'font-bold text-green-600' : 'text-green-600'}>Add Expense</NavLink></li>
+                <ul className="flex items-center gap-4 p-4 bg-gray-100">
+                    <li><h1 className="text-xl font-bold">Expense Tracker</h1></li>
+                    <li><NavLink to="/" className={({ isActive }) => isActive ? 'font-bold' : ''}>Home</NavLink></li>
+                    <li><NavLink to="/expenses" className={({ isActive }) => isActive ? 'font-bold' : ''}>Expenses</NavLink></li>
+                    <li><NavLink to="/overview" className={({ isActive }) => isActive ? 'font-bold' : ''}>Overview</NavLink></li>
+                    <li><NavLink to="/add-expense" className={({ isActive }) => isActive ? 'font-bold text-green-600' : 'text-green-600'}>Add Expense</NavLink></li>
                 </ul>
             </nav>
 		</div>

@@ -6,6 +6,7 @@ interface ExpenseListProps {
 }
 
 function ExpenseList({ expenses, onDeleteExpense }: ExpenseListProps) {
+    
     const total = expenses.reduce(
         (sum: number, expense: Expense) => sum + expense.amount,
         0

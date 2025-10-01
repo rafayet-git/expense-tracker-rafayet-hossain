@@ -1,16 +1,16 @@
 
 import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
-import type { Expense, Category } from '../types/expense';
+import type { Expense } from '../types/expense';
 
 interface ExpenseFormProps {
     onAddExpense: (expense: Expense) => void;
 }
 
 export default function ExpenseForm({ onAddExpense }: ExpenseFormProps) {
-    const [amount, setAmount] = useState<string>('');
+    /*const [amount, setAmount] = useState<string>('');
     const [description, setDescription] = useState<string>('');
-    const [category, setCategory] = useState<Category>('');
+    const [category, setCategory] = useState<string>('');
     
     // Suggested categories for better UX
     const suggestedCategories = ['food', 'transport', 'utilities', 'entertainment', 'other'];
@@ -45,6 +45,7 @@ export default function ExpenseForm({ onAddExpense }: ExpenseFormProps) {
     const handleCategoryChange = (e: ChangeEvent<HTMLInputElement>): void => {
         setCategory(e.target.value);
     };
+    */
   
     return (
         <>
