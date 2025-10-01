@@ -13,7 +13,7 @@ cards, that show features. one row of 3 cards, with an image on top and text on 
 ## Expenses
 Card of how much spent per week
 
-## Suggestions/Review
+## Overview
 
 ## Add Expense
 Options:
