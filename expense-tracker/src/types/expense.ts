@@ -10,3 +10,8 @@ export interface Expense {
         interval: 'day' | 'week' | 'month' | 'year';
     }
 }
+
+export interface Category {
+    id: number;
+    name: string;
+}
