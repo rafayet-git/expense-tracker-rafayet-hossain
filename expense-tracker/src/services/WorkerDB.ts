@@ -1,4 +1,4 @@
-import sqlite3Worker1Promiser from '@sqlite.org/sqlite-wasm';
+import { sqlite3Worker1Promiser } from '@sqlite.org/sqlite-wasm';
 import type { Expense, Category } from '../types/expense';
 
 type PromiserFn = (type: string, args?: any) => Promise<{ type: string; result: any }>; 
@@ -12,8 +12,7 @@ async function openInit(promiser: PromiserFn) {
 		openResp = await promiser('open', { filename: 'file:expenses.db?vfs=opfs' });
 	} catch (error) {
 		console.warn('Not able to init OPFS:', error);
-		// openResp = await promiser('open', { filename: 'file:expenses.db?vfs=kvvfs' }); // IndexedDB
-		openResp = await promiser('open', { filename: ':memory:' });
+		openResp = await promiser('open', { filename: 'file:expenses.db?vfs=kvvfs' }); // IndexedDB
 	}
 	dbId = openResp.result.dbId;
 
@@ -45,9 +44,9 @@ async function openInit(promiser: PromiserFn) {
 		'Subscriptions',
 		'Other'
 	];
-	await promiser('exec', { dbId, 
-		sql: categories.map(() => 
-			'INSERT OR IGNORE INTO categories (name) VALUES (?)').join(';'),
+	const catPlaceholder = categories.map(() => '(?)').join(', ');
+	await promiser('exec', { dbId,
+		sql: `INSERT OR IGNORE INTO categories (name) VALUES ${catPlaceholder};`,
 		bind: categories
 	});
 	console.log('Storage initialized');
@@ -69,7 +68,7 @@ async function ensurePromiser(): Promise<PromiserFn> {
 	return dbPromise;
 }
 
-export async function init(): Promise<boolean> {
+export async function initDB(): Promise<boolean> {
 	try {
 		await ensurePromiser();
 		return true;
@@ -221,7 +220,7 @@ export async function deleteExpense(id: number) {
 }
 
 export const WorkerDB = { 
-	init,
+	initDB,
 	getAllCategories,
 	getCategory,
 	addCategory,
@@ -233,10 +232,4 @@ export const WorkerDB = {
 };
 
 export default WorkerDB;
-
-/*
-Usage:
-await init();
-const expenses = await getAllExpenses();
-*/
 
