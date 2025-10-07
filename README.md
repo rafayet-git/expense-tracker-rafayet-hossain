@@ -74,4 +74,5 @@ Contributions are welcome! Please open an [issue](https://github.com/rafayet-git
 This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
-<!-- [TODO: Credit any resources, tutorials, or people who helped] -->
+https://github.com/sqlite/sqlite-wasm
+https://github.com/shinshin86/todo-opfs-sqlite

@@ -5,19 +5,19 @@ import Home from './pages/Home';
 import Overview from './pages/Overview';
 import AddExpense from './pages/AddExpense';
 import Header from './components/Header';
-import { initDB } from './services/WorkerDB';
+import { initDb } from './services/WorkerDb';
 
 function App() {
  	const [isDbReady, setIsDbReady] = useState(false);
   	const [error, setError] = useState<string | null>(null);
 	
 	useEffect(() => {
-		initDB()
+		initDb()
 			.then(() => {
 				setIsDbReady(true);
 			})
 			.catch((error) => {
-				console.error('Failed:', error);
+				console.error('DB Init Failed:', error);
 				setError('Failed to initialize database');
 			});
 	}, []);
@@ -47,7 +47,6 @@ function App() {
 					<Route path="/overview" element={isDbReady ? <Overview /> : <DatabaseLoadingPage />} />
 					<Route path="/add-expense" element={isDbReady ? <AddExpense /> : <DatabaseLoadingPage />} />
 				</Routes>
-				
 			</div>
 		</Router>
 	);
